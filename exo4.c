@@ -15,12 +15,13 @@ void main () {
 
         valeur=rand()%11;
         *(ptab + i)=valeur;
-    }
-
-    for(int i=0;i<SIZE;i++){
+       
 
         somme +=*(ptab + i);
+    
     }
+
+   
 
     for(int i=0;i<SIZE;i++){
 
