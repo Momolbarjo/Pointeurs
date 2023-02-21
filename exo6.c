@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <conio.h>
 
 
 void cartesian2polar(float x, float y, float *radius, float *angle){
@@ -24,15 +25,22 @@ void polar2cartesian(float radius, float angle, float *x, float *y){
 
 void main(){
 
-    int choix;
+
+    int  choix;
     float x,y,x2,y2,radius,angle;
 
     printf("Que souhaitez vous faire :");
     printf("\n1.carte2polar");
     printf("\n2.polar2carte\n");
-    scanf("%d",&choix);
+    
+   while (!kbhit()) {
+    // Attente de l'appui sur une touche
+}
 
-    if(choix==1){
+
+    choix=getch();
+    
+   if (choix=='1') {
 
         printf("\nVous avez choisi, carte2polar");
         printf("\nQue valent vos cordonnees x et y :");
@@ -41,10 +49,14 @@ void main(){
 
         cartesian2polar(x,y,&radius,&angle);
 
+     
         printf("Vos coordonees polaires sont les suivantes r=%f teta=%f",radius,angle);
+        
     }
+    
 
-    else if(choix==2){
+
+    else if(choix=='2'){
 
         printf("\nVous avez choisi, polar2carte");
         printf("\nQue valent vos cordonnees r et teta :");
@@ -54,5 +66,10 @@ void main(){
         polar2cartesian(radius,angle,&x2,&y2);
 
         printf("Vos coordonees cartesiennes sont les suivantes (%f,%f)",x2,y2);
-    }
+       
+     }
+    
+    else{
+        printf("Ni 1 ni 2 c ciao.");
+        }   
 }
