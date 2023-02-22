@@ -10,8 +10,8 @@ int getExtremums(int *tab,int N,int *min,int *max){
     }
 
     int i;
-    *min=tab[0];
-    *max=tab[0];
+    *min=tab;
+    *max=tab;
 
      for (i = 1; i < N; i++) {
         if (tab[i] < *min) {
